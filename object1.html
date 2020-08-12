@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+     
+ </style>
+</head>
+<body>
+    <input id="input1" placeholder="Username" type= "text">
+    <input id="input2" placeholder="password" type= "password">
+    <button onclick ="Login()" class="button"> Login </button>
+    <button> Logout</button>
+    <script>
+        var input1 = document.getElementById("input1")
+        var input2 = document.getElementById("input2")
+        var Turbold = {
+            name : "turbold" ,
+            password : 12345  , 
+            login : "turbold02" , 
+            password02 : 123456 , 
+        }
+        var myUsers = [{name : "turbold" , password : 12345} , {name:"turbold02" , password: 123456} , {name : "tamir" , password : 123456}]
+        var canLogin = false
+        function Login(){
+           for ( var i= 0 ; i < myUsers.lengt ; i++){
+               if (input1.value == myUsers[i].name && input2.value == myUsers[i].password){
+                    canLogin =true
+               }
+           }
+        }
+        if(canLogin){
+            alert("logged in ")     
+        } else {
+            alert("cant log in")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <script>
+        var person = {
+            name: "Bat",
+            age: 21 , 
+            hasDriverLicense: true,
+            dateofBIrth: "01/01/2000",
+            address:{
+               firstLine: "123",
+               postCode: "SE1",
+               country: "England",
+            },
+        } ; 
+        console.log(JSON.stringify(person));
+
+        console.log(person.name);
+        console.log(person.age);
+        console.log(person.hasDriverLicense);
+        console.log(person.dateofBIrth);
+        console.log(JSON.stringify(person.address));
+
+        console.log(Object.values(person));
+    </script>
+</body>
+</html>

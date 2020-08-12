@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> 
+         div{
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          float: left;
+          margin: 10px;
+          
+         }                                  
+     </style>
+</head>
+<body>
+    <button type="button" onclick="myFunction()">click here</button>
+    <div id="neg"></div>
+    <div id="hoyr"></div>
+    <div id="gurav"></div>
+    <script>
+        function myFunction(){
+           var divNeg =  document.getElementById("neg")
+                                
+           var divHoyr = document.getElementById("hoyr")
+           var divGurav= document.getElementById("gurav")
+            do{
+                tovchluurDrgdsanToo++
+            }while(tovchluurDrgdsanToo>5)
+                                              
+           console.log(tovchluurDrgdsanToo)
+           if(tovchluurDrgdsanToo==1){
+            divNeg.style.visibility="hidden"
+              
+           }           
+           if(tovchluurDrgdsanToo==2){
+               divNeg.style.visibility="visible"
+              divHoyr.style.visibility="hidden"
+           }else if(tovchluurDrgdsanToo==3){            
+            divHoyr.style.visibility="visible"
+            divNeg.style.visibility="visible"
+             divGurav.style.visibility="hidden"            
+           } else if(tovchluurDrgdsanToo==4){
+               divNeg.style.visibility="visible"
+               divHoyr.style.visibility="visible"
+               divGurav.style.visibility="visible"
+               tovchluurDrgdsanToo= 0   
+           }
+         }
+        
+         var tovchluurDrgdsanToo = 0 
+    </script>
+</body>
+</html>

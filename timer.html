@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .main{
+            width: 320px;
+            height: 120px;
+            background-color: aqua;
+            margin: auto;
+            margin-top: 250px;
+        }
+        .btn{
+            float: right;
+            margin: 10px;
+            margin-top: 30px;
+            
+        }
+        .input{
+            float: left;
+            margin: 10px;
+            margin-top: 30px;
+        }
+        .sec{
+            margin-top: 30px;
+            float: left; 
+            margin-left: 20px;                    
+        }
+        .display{
+            margin-top: 30px;
+            float: left; 
+            margin-left: 20px;  
+            
+        }
+    </style>
+</head>
+<body>
+    <div class= "container">
+        <div class="main">
+            <input class="input" maxlength="7" size="7" >
+            <div class="sec"> seconds </div>          
+            <button class="btn" onclick="setTime()"> Set timer</button>
+            <div class="display"> 00:00:00 </div>           
+        </div>
+    </div>
+    <script>
+        var sec
+        var hour = 0
+        var min
+        var myDisplay = document.querySelector(".display")
+        var input = document.querySelector(".input")
+        function run(time){
+            var timeOutid = setTimeout(run,1000,time)
+            if(time == 0){
+                clearTimeout(timeOutid)
+            }
+            if(input.value > 60){
+            sec = input.value - 60
+            min = 1           
+            sec--
+            }     
+            myDisplay.innerHTML = hour + ":" + min + ":" + sec
+        }
+        function setTime(){
+            run(input.value)
+        }
+    </script>
+</body>
+</html>

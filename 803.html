@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> stopwatch</title>
+</head>
+<body>
+    <div>
+        00:00:00
+    </div>
+    <button onclick="start()"> start </button>
+    <button onclick="stop()"> pause </button>   
+    <script>       
+        var doli = 0
+         var sec = 0
+         var min = 0
+         var displayDoli
+         var displaySec
+         var displayMin
+         var myDiv = document.querySelector("div")
+         var intervalId = setInterval(myFunction,10)
+        function myFunction(){           
+            doli++
+            myDiv.innerHTML = doli
+            if(doli == 100){
+                doli = 0
+                sec++                
+            }   
+            if (sec == 60) {
+                sec = 0 
+                min++ 
+            }
+            displayDoli = doli
+            displayMin = min
+            displaySec = sec
+            if(sec < 10){
+                displaySec = "0" + sec
+            }
+            if(min < 10){
+                displayMin = "0" + min
+            }
+            if(doli <10 ){
+                displayDoli = "0"+ doli
+            }
+            myDiv.innerHTML = displayMin + ":" + displaySec + ":" + displayDoli
+        }
+        function start(){
+            setInterval(myFunction,10)
+        }      
+        function stop(){
+            clearInterval(intervalId)
+        }
+    </script>
+</body>
+</htm>

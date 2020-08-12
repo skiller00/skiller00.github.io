@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <button onclick="myFunction()"> click here </button>
+    <input id="myInput1" type="number">
+    <input id="myInput2" type="number">
+    <p id="hariult">answer</p>    
+    <script>
+        var input1 = document.getElementById("myInput1")
+        var input2 = document.getElementById("myInput2")
+        var hariult = document.getElementById("hariult")       
+        function myFunction(){                         
+            if(Number(input1.value)+Number(input2.value) > 100){
+             hariult.innerHTML="good"
+           } else if(Number(input1.value)+ Number(input2.value) < 100){
+               hariult.innerHTML="not that good"           
+           } else if(Number(input1.value)+Number(input2.value) == 200){
+               hariult.innerHTML="excellent"
+           }       
+        }       
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head> 
+
+</head>
+<body>
+    <script>
+        var name = "Alex"
+        var names = ["Alex","Maria","Sam","Ben"]
+        console.log(names)
+
+        console.log(names[1])
+        console.log(names.length)
+
+        for ( var i= 0; i<=names.length - 1; i++){
+            console.log("NAME IS : " + names[i])
+            if (names[i]=="Alex"){
+              alert("alex oldlo")
+              
+            }
+
+        }
+                   
+        for (var n of names){
+            console.log(n);
+        }
+        names.forEach(function(n, index) {
+            console.log(index + " - " + n)        
+        })
+    </script>
+</body>
+</html>

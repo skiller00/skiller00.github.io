@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .main{
+            width: 27%;
+            height: 385px;
+            background-color: aqua;
+            margin: auto;            
+        }
+        .second{
+            width: 95%;
+            height : 300px;
+            background-color: salmon;
+            margin: 8px;
+            overflow: scroll;
+            
+        }
+        .input{
+            width: 65%;
+            height: 50px;
+            margin :3px;
+            
+        }
+        .btn{
+            width: 29%;
+            height: 55px;
+            margin: 3px;
+            float : right;
+            margin-left: 1px;
+        }
+        .btn1{
+            float: left;
+            margin : 5px;
+            
+        }
+        .third{
+            margin: 5px;
+            float: left ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class= "main">
+            <input class= "input" >
+            <button class="btn" onclick="todo()">+</button>
+            <div class= "second">                
+                    <div class= "third"></div>                  
+            </div>
+        </div>
+    </div>
+    <script>
+        var input = document.querySelector("input")
+        var second = document.querySelector(".second")
+        function todo(){
+            var inputUtga = document.createElement("div")
+            var btnTag = document.createElement("button")
+            btnTag.innerHTML= "-"
+            inputUtga.innerHTML = input.value
+            second.append(inputUtga , btnTag)
+            inputUtga.className = "third"
+            btnTag.className = "btn1"
+            btnTag.onclick = remove
+        }
+        function remove(){
+            
+        }
+    </script>
+</body>
+</html>
