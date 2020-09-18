@@ -55,8 +55,13 @@
             myColor.push(myInput.value)
             document.body.style.backgroundColor=myInput.value
             myInput.value = ""
+            if(document.body.style.backgroundColor !== myColor[myColor.length-1]){
+              alert("Buruu ungu oruulsan bn!!")
+              myColor.pop(myColor.length-1)
+            }
             
         }
+
     </script>
 </body>
 </html>
