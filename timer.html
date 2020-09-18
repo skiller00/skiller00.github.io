@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         .main{
             width: 320px;
@@ -31,38 +34,68 @@
             margin-left: 20px;  
             
         }
+        body{
+            background-color: white;
+            background-image: url('background.png');
+        }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">FirstWeb</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="stopwatch.html">Stopwatch</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="javascript18.html">BackgroundChanger</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="todo.html">Todo</a></li>
+            <li><a href="timer.html">Timer</a></li>
+            <li><a href="randomSentence.html">randomSentence</a></li>
+            <li><a href="gifSelector.html">GIF</a></li>
+            <li><a href="DivTagalga.html">invisibility</a></li>
+            <li><a href="slideShow.html">SlideShow</a></li>
+          </ul>
+        </div>
+      </nav>
     <div class= "container">
         <div class="main">
-            <input class="input" maxlength="7" size="7" >
+            <input class="input" maxlength="7" size="7">
             <div class="sec"> seconds </div>          
-            <button class="btn" onclick="setTime()"> Set timer</button>
-            <div class="display"> 00:00:00 </div>           
+            <button class="btn" onclick = "setTime()"> Set timer</button>
+            <div class="display">00:00</div>           
         </div>
     </div>
     <script>
-        var sec
-        var hour = 0
-        var min
-        var myDisplay = document.querySelector(".display")
-        var input = document.querySelector(".input")
-        function run(time){
-            var timeOutid = setTimeout(run,1000,time)
-            if(time == 0){
-                clearTimeout(timeOutid)
+        const timeLeftDisplay = document.querySelector('.display')
+        const setTimeBtn = document.querySelector('.btn')
+        const inputValue = document.querySelector('.input')
+        let min
+        let sec 
+        function countDown(){
+            timeLeftDisplay.innerHTML = inputValue.value--
+            if(inputValue.value <= 0 ){
+                clearInterval(inputValue.value = 0)
             }
-            if(input.value > 60){
-            sec = input.value - 60
-            min = 1           
-            sec--
-            }     
-            myDisplay.innerHTML = hour + ":" + min + ":" + sec
+            if(inputValue.value >=60){
+                min = Math.floor(inputValue.value / 60)
+                sec = inputValue.value - min * 60
+                console.log(sec)
+                timeLeftDisplay.innerHTML = min + ":" +sec
+            }
+            if(inputValue.value <= 600){
+                min = Math.floor(inputValue.value / 60)
+                sec = inputValue.value - min * 60
+                console.log(sec)
+                timeLeftDisplay.innerHTML = "0"+min + ":" +sec               
+            }
         }
         function setTime(){
-            run(input.value)
-        }
+            setInterval(countDown, 1000)
+        }   
     </script>
 </body>
 </html>
